@@ -132,7 +132,7 @@ JobBatchName = condorTestJobs
 # 일반적으로 실행파일의 환경설정을 위해 Bash 스크립트 파일을 넣습니다.
 executable = test.sh
 #### universe는 일반적인 경우는 vanilla를 설정합니다.
-# Java를 실행하기 위한 java 유니버스, docker를 위한 docker 유니버스 등도 존재합니다.
+# 컨테이너를 실행하기 위한 container 유니버스, docker를 위한 docker 유니버스 등도 존재합니다.
 # 각각의 유니버스들은 해당 프로그램 실행을 위한 환경설정을 지원합니다.
 universe   = vanilla
 #### arguments는 프로그램의 인자를 입력합니다.
