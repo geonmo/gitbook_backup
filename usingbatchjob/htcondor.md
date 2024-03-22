@@ -97,7 +97,9 @@ HTCondor에 작업을 동시(concurrent)에 실행시키려면 HTCondor 문법�
 
 > batch\_name = kisti batch test \
 > executable = run.sh \
-> universe = vanilla \
+> universe = container
+>
+> container\_image =  /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el9:latest\
 > getenv = True\
 > arguments = $(DATAFile)&#x20;
 >
@@ -112,8 +114,7 @@ HTCondor에 작업을 동시(concurrent)에 실행시키려면 HTCondor 문법�
 > transfer\__output\_files = zcandmass.root_ \
 > _transfer\_output\_remaps = "zcandmass.root = zcandmass\__$(Process).root"\
 > accounting\_group=group\_cms\
-> \+SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el6:latest" \
-> \+SingularityBind = "/cvmfs, /cms, /share"\
+> \#+SingularityBind = "/cvmfs, /cms, /share"\
 > queue DATAFile from filelist.txt
 
 위 작업은 filelist.txt을 읽어 한줄씩 $(DATAFile) 변수에 대입하며 하나씩 실행됩니다. 총 입력 파일이 3개이므로 총 3개의 작업이 제출됩니다.&#x20;
