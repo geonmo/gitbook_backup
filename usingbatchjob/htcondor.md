@@ -127,7 +127,7 @@ WN에서 run.sh 스크립트를 통해 실행이 되며 인자로 $(DATAFile)이
 
 accounting\_group은 통합팜에서 작업을 실행하기 위해 필요합니다.
 
-\+SingularityImageBind 명령어는 SLC6 환경을 사용하기 위해 사용됩니다. 해당 이미지 파일의 위치를 조정하여 EL6나 우분투 등의 타 OS 사용도 가능합니다. 이미지 파일에 대해 관심이 있으신 분들은 /cvmfs/singularity.opensciencegrid.org/opensciencegrid/ 디렉토리나 /cvmfs/singularity.opensciencegrid.org/ 디렉토리의 타 유저들의 이미지들을 살펴보시기 바랍니다.
+container universe는 apptainer 컨테이너 런타임 활용을 위해서 사용됩니다. 사용되는 이미지는 .sif 포맷이나 일반 디렉토리(혹은  /cvmfs)를 지정할 수 있습니다.
 
 ## 참고문헌
 
