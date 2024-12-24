@@ -8,7 +8,7 @@ description: /xrootd 스토리지에 저장된 데이터에 접근하는 방법�
 
 Google Sheet를 이용하여 사용자들의 데이터 사용량 확인이 가능합니다. 아래 링크를 확인하시기 바랍니다.
 
-[구글 시트 모니터링 페이지](https://docs.google.com/spreadsheets/d/1mk335AFIkW7X4Pod8pecfTw0m1-S\_NTjNkxFzHEwAL0/edit#gid=1404507412)
+[구글 시트 모니터링 페이지](https://docs.google.com/spreadsheets/d/1mk335AFIkW7X4Pod8pecfTw0m1-S_NTjNkxFzHEwAL0/edit#gid=1404507412)
 
 ## 데이터 쓰기 방법
 
@@ -27,7 +27,7 @@ xrdcp는 xrootd 프로토콜을 이용한 데이터 전송 프로그램입니다
 
 #### xrdMigration.py 사용하기&#x20;
 
-xrdMigration.py는 /cms/ldap_home,_ /cms/scratch, /cms\_scratch에 저장된 데이터 파일들을 /xrootd/store/user/\<USERID>로 옮기기 위해 개발되었습니다. 해당 /cms 디렉토리들의 경로를 지정하면 동일한 경로명으로 /xrootd 디렉토리로 옮겨줍니다.
+xrdMigration.py는 /cms/lda&#x70;_&#x68;ome,_ /cms/scratch, /cms\_scratch에 저장된 데이터 파일들을 /xrootd/store/user/\<USERID>로 옮기기 위해 개발되었습니다. 해당 /cms 디렉토리들의 경로를 지정하면 동일한 경로명으로 /xrootd 디렉토리로 옮겨줍니다.
 
 {% tabs %}
 {% tab title="옵션 설명" %}
@@ -39,8 +39,8 @@ xrdcp -p /cms/ldap_home/geonmo/migration_test/subdir root://cms-xrdr.private.lo:
 xrdcp: /cms/ldap_home/geonmo/migration_test/subdir is a directory.
 ```
 
-\-d                     : 복사 후 checksum 값 비교후 정상이면 기존 파일 삭제\
-\-c \<CERN ID> : CERN ID를 기입하여 실행 속도 향상. -c 옵션이 없을 경우 CERN CRIC에 질의를 하여 사용자의 인증서 정보를 이용하여 CERN ID 정보를 가져오기 때문에 약 1분 가량의 지연시간이 발생합니다.
+-d                     : 복사 후 checksum 값 비교후 정상이면 기존 파일 삭제\
+-c \<CERN ID> : CERN ID를 기입하여 실행 속도 향상. -c 옵션이 없을 경우 CERN CRIC에 질의를 하여 사용자의 인증서 정보를 이용하여 CERN ID 정보를 가져오기 때문에 약 1분 가량의 지연시간이 발생합니다.
 {% endtab %}
 {% endtabs %}
 

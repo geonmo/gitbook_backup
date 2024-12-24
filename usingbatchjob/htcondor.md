@@ -37,7 +37,7 @@ dasgoclient --query "dataset file=/store/mc/RunIIFall17NanoAODv4/ZZ_TuneCP5_13Te
 cmsrel CMSSW_10_2_9
 ```
 
-> Waiting for release information to be obtained via [https://cmssdt.cern.ch/SDT/releases.map?release=CMSSW\_10\_2\_9\&architecture=slc7\_amd64\_gcc700\&scram=V2\_2\_9\_pre04\&releasetop=/cvmfs/cms.cern.ch/slc7\_amd64\_gcc700/cms/cmssw/CMSSW\_10\_2\_9](https://cmssdt.cern.ch/SDT/releases.map?release=CMSSW\_10\_2\_9\&architecture=slc7\_amd64\_gcc700\&scram=V2\_2\_9\_pre04\&releasetop=/cvmfs/cms.cern.ch/slc7\_amd64\_gcc700/cms/cmssw/CMSSW\_10\_2\_9) (timeout in 7s) WARNING: Developer's area is created for non-production architecture slc7\_amd64\_gcc700. **Production architecture for this release is slc6\_amd64\_gcc700.**
+> Waiting for release information to be obtained via [https://cmssdt.cern.ch/SDT/releases.map?release=CMSSW\_10\_2\_9\&architecture=slc7\_amd64\_gcc700\&scram=V2\_2\_9\_pre04\&releasetop=/cvmfs/cms.cern.ch/slc7\_amd64\_gcc700/cms/cmssw/CMSSW\_10\_2\_9](https://cmssdt.cern.ch/SDT/releases.map?release=CMSSW_10_2_9\&architecture=slc7_amd64_gcc700\&scram=V2_2_9_pre04\&releasetop=/cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_2_9) (timeout in 7s) WARNING: Developer's area is created for non-production architecture slc7\_amd64\_gcc700. **Production architecture for this release is slc6\_amd64\_gcc700.**
 
 위 메시지를 참고하여 사용S중인 ui서버의  환경을 SLC6 로 변경합니다.  또한, SCRAM\_ARCH=slc6\_amd64\_gcc700 환경변수를 이용하여 작업공간을 생성하고 src 디렉토리로 이동합니다.
 
@@ -89,7 +89,7 @@ sed -i 's/^/root:\/\/cmsxrootd.fnal.gov\//g' filelist.txt
 ```
 
 > (base) \[geonmo@ui10 KISTIBatch]$ ls -l \*.root \
-> \-rw-r--r--. 1 geonmo geonmo 3780 Sep 2 14:05 zcandmass.root
+> -rw-r--r--. 1 geonmo geonmo 3780 Sep 2 14:05 zcandmass.root
 
 ### HTCondor 작업 제출 명세 작성
 
@@ -107,14 +107,14 @@ HTCondor에 작업을 동시(concurrent)에 실행시키려면 HTCondor 문법�
 > should\_transfer\_files = YES \
 > when\_to\_transfer\_output = ON\_EXIT
 >
-> output = job_$(Process).out_ \
+> output = jo&#x62;_$(Process).out_ \
 > _error = job_$(Process).err \
 > log = condor.log
 >
 > transfer\__output\_files = zcandmass.root_ \
 > _transfer\_output\_remaps = "zcandmass.root = zcandmass\__$(Process).root"\
 > accounting\_group=group\_cms\
-> \+SingularityBind = "/cvmfs,/etc/condor,/cms,/cms\_scratch,/var/lib/condor,/run/user"\
+> +SingularityBind = "/cvmfs,/etc/condor,/cms,/cms\_scratch,/var/lib/condor,/run/user"\
 > queue DATAFile from filelist.txt
 
 위 작업은 filelist.txt을 읽어 한줄씩 $(DATAFile) 변수에 대입하며 하나씩 실행됩니다. 총 입력 파일이 3개이므로 총 3개의 작업이 제출됩니다.&#x20;
